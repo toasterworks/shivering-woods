@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.toasterworks.shiveringwoods.api.block.utils.HollowBlockType;
 import net.toasterworks.shiveringwoods.api.block.utils.WoodsBlockProperties;
+import net.toasterworks.shiveringwoods.config.WoodsCommonConfig;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
@@ -44,25 +45,21 @@ public class HollowBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult result) {
         if (level.isClientSide()) { return InteractionResult.SUCCESS; }
 
-        //TODO: configured chance percentage; rewrite this nonsense
-        if (blockState.getValue(BLOCK_TYPE) == HollowBlockType.UNTOUCHED) {
-            int rand = new Random().ints(0,7).findFirst().getAsInt();
+        int emptyChance = WoodsCommonConfig.WOODS_INHABITANT_EMPTY.get();
+        int merchantChance = WoodsCommonConfig.WOODS_INHABITANT_MERCHANT.get();
+        int hostileChance = WoodsCommonConfig.WOODS_INHABITANT_SURPRISE.get();
 
-            switch (rand) {
-                case 0:
-                    setHostile(level, blockPos, blockState);
-                    break;
-                case 1:
-                case 2:
-                    setMerchant(level, blockPos, blockState);
-                    break;
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                    setEmpty(level, blockPos, blockState);
-                    break;
-            }
+        int chanceSum = emptyChance + merchantChance + hostileChance;
+
+        if (blockState.getValue(BLOCK_TYPE) == HollowBlockType.UNTOUCHED) {
+            int rand = new Random().ints(1, chanceSum).findFirst().getAsInt();
+
+            if (rand <= emptyChance)
+                { setEmpty(level, blockPos, blockState); }
+            else if (rand - emptyChance <= merchantChance)
+                { setMerchant(level, blockPos, blockState); }
+            else
+                { setHostile(level, blockPos, blockState); }
         }
 
         return InteractionResult.CONSUME;

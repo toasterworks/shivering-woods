@@ -23,6 +23,10 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        name = "Fuzs Mod Resources"
+        url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+    }
 }
 
 configurations {
@@ -38,11 +42,22 @@ dependencies {
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
-    // modmenu
-    modImplementation "maven.modrinth:modmenu:lEkperf6"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    // modmenu
+    modImplementation "maven.modrinth:modmenu:lEkperf6"
+
+    // moremcmeta fabric
+    modImplementation "maven.modrinth:moremcmeta:M3YXnvwE"
+    modImplementation "maven.modrinth:moremcmeta-emissive:DerLwbTk"
+
+    // forge config api port
+    modImplementation "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:8.0.0"
+
+    // forge config screens
+    modImplementation "maven.modrinth:forge-config-screens:nwy63zfI"
 }
 
 processResources {

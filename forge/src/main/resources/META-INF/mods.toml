@@ -46,3 +46,24 @@ issueTrackerURL="https://github.com/toasterworks/shivering-woods/issues"
         versionRange = "[9.1,)"
         ordering = "AFTER"
         side = "BOTH"
+
+    [[dependencies.shiveringwoods]]
+        modId = "forgeconfigscreens"
+        mandatory = false
+        versionRange = "[0,)"
+        ordering = "AFTER"
+        side = "CLIENT"
+
+    [[dependencies.shiveringwoods]]
+        modId = "moremcmeta"
+        mandatory = false
+        versionRange = "[0,)"
+        ordering = "AFTER"
+        side = "CLIENT"
+
+    [[dependencies.shiveringwoods]]
+        modId = "moremcmeta"
+        mandatory = false
+        versionRange = "[0,)"
+        ordering = "AFTER"
+        side = "CLIENT"

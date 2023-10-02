@@ -32,6 +32,12 @@
   "depends": {
     "fabric-api": "*",
     "minecraft": ">=1.20",
-    "architectury": ">=9"
+    "architectury": ">=9",
+    "forgeconfigapiport" : ">=8"
+  },
+  "recommends": {
+    "forgeconfigscreens": "*",
+    "moremcmeta": "*",
+    "moremcmeta_emissive_plugin": "*"
   }
 }

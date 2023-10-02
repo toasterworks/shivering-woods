@@ -19,6 +19,20 @@ loom {
     }
 }
 
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+}
+
 configurations {
     common
     shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
@@ -34,6 +48,13 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+    // moremcmeta forge
+    modImplementation "maven.modrinth:moremcmeta:m5yiyIq3"
+    modImplementation "maven.modrinth:moremcmeta-emissive:i95x3BxI"
+
+    // forge config screens
+    modImplementation "maven.modrinth:forge-config-screens:YUDLu26S"
 }
 
 processResources {

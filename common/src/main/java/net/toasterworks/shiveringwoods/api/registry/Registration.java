@@ -25,19 +25,19 @@ public class Registration {
 
     public static <T extends Block> RegistrySupplier<T> registerBlock(String id, Supplier<T> block, boolean createItem) {
         RegistrySupplier<T> return_value = BLOCKS.register(id, block);
-        if (createItem) { registerBlockItem(id, return_value, WoodsTabs.MAIN_TAB.get()); }
+        if (createItem) { registerBlockItem(id, return_value, WoodsTabs.MAIN_TAB); }
         return return_value;
     }
 
-    private static <T extends Block> RegistrySupplier<Item> registerBlockItem(String id, RegistrySupplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistrySupplier<Item> registerBlockItem(String id, RegistrySupplier<T> block, RegistrySupplier<CreativeModeTab> tab) {
         return Registration.registerItem(id, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(tab)));
     }
 
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(WoodsCommon.MOD_ID, Registries.CREATIVE_MODE_TAB);
 
     public static void init() {
+        TABS.register();
         ITEMS.register();
         BLOCKS.register();
-        TABS.register();
     }
 }

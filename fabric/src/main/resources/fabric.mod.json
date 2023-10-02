@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "shiveringwoods",
+  "version": "${version}",
+  "name": "Shivering Woods",
+  "description": "A SpookyJam mod that adds mystical forests and more",
+  "authors": [
+    "shizotoaster - code, sprites",
+    "sadCreepy - code, sprites"
+  ],
+  "contributors": [
+    "xfacthd - Helped in NeoForged Discord"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/shivering-woods",
+    "sources": "https://github.com/toasterworks/shivering-woods",
+    "issues": "https://github.com/toasterworks/shivering-woods/issues"
+  },
+  "license": "MIT",
+  "icon": "woodsicon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.toasterworks.shiveringwoods.fabric.WoodsFabric"
+    ]
+  },
+  "mixins": [
+    "shiveringwoods.mixins.json",
+    "shiveringwoods-common.mixins.json"
+  ],
+  "depends": {
+    "fabric-api": "*",
+    "minecraft": ">=1.20",
+    "architectury": ">=9"
+  }
+}

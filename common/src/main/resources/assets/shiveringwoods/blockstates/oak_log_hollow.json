@@ -1,0 +1,105 @@
+{
+  "variants": {
+    "facing=east,hollow_block_type=untouched": {
+      "model": "shiveringwoods:block/oak_log_hollow",
+      "y": 90
+    },
+    "facing=north,hollow_block_type=untouched": {
+      "model": "shiveringwoods:block/oak_log_hollow"
+    },
+    "facing=south,hollow_block_type=untouched": {
+      "model": "shiveringwoods:block/oak_log_hollow",
+      "y": 180
+    },
+    "facing=west,hollow_block_type=untouched": {
+      "model": "shiveringwoods:block/oak_log_hollow",
+      "y": 270
+    },
+
+    "facing=east,hollow_block_type=empty": {
+      "model": "shiveringwoods:block/oak_log_hollow",
+      "y": 90
+    },
+    "facing=north,hollow_block_type=empty": {
+      "model": "shiveringwoods:block/oak_log_hollow"
+    },
+    "facing=south,hollow_block_type=empty": {
+      "model": "shiveringwoods:block/oak_log_hollow",
+      "y": 180
+    },
+    "facing=west,hollow_block_type=empty": {
+      "model": "shiveringwoods:block/oak_log_hollow",
+      "y": 270
+    },
+
+    "facing=east,hollow_block_type=merchant": [
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated0",
+        "y": 90
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated1",
+        "y": 90
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated2",
+        "y": 90
+      }
+    ],
+    "facing=north,hollow_block_type=merchant": [
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated0"
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated1"
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated2"
+      }
+    ],
+    "facing=south,hollow_block_type=merchant": [
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated0",
+        "y": 180
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated1",
+        "y": 180
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated2",
+        "y": 180
+      }
+    ],
+    "facing=west,hollow_block_type=merchant": [
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated0",
+        "y": 270
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated1",
+        "y": 270
+      },
+      {
+        "model": "shiveringwoods:block/oak_log_hollow_inhabitated2",
+        "y": 270
+      }
+    ],
+
+    "facing=east,hollow_block_type=hostile": {
+      "model": "shiveringwoods:block/oak_log_hollow_surprise",
+      "y": 90
+    },
+    "facing=north,hollow_block_type=hostile": {
+      "model": "shiveringwoods:block/oak_log_hollow_surprise"
+    },
+    "facing=south,hollow_block_type=hostile": {
+      "model": "shiveringwoods:block/oak_log_hollow_surprise",
+      "y": 180
+    },
+    "facing=west,hollow_block_type=hostile": {
+      "model": "shiveringwoods:block/oak_log_hollow_surprise",
+      "y": 270
+    }
+  }
+}

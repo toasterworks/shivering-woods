@@ -1,0 +1,47 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+#issueTrackerURL = ""
+license = "MIT"
+issueTrackerURL="https://github.com/toasterworks/shivering-woods/issues"
+
+[[mods]]
+    modId = "shiveringwoods"
+    version = "${version}"
+    displayName = "Shivering Woods"
+    authors = '''
+
+    * shizotoaster - code, sprites
+    * sadCreepy - code, sprites
+    '''
+    description = '''
+
+    A SpookyJam mod that adds mystical forests and more
+    '''
+    #logoFile = "woodsicon.png"
+    #logoBlur = false
+    credits='''
+
+    * xfacthd - Helped in NeoForged Discord
+    '''
+    displayURL="https://modrinth.com/mod/shivering-woods"
+
+    [[dependencies.shiveringwoods]]
+        modId = "forge"
+        mandatory = true
+        versionRange = "[46,)"
+        ordering = "NONE"
+        side = "BOTH"
+
+    [[dependencies.shiveringwoods]]
+        modId = "minecraft"
+        mandatory = true
+        versionRange = "[1.20,)"
+        ordering = "NONE"
+        side = "BOTH"
+
+    [[dependencies.shiveringwoods]]
+        modId = "architectury"
+        mandatory = true
+        versionRange = "[9.1,)"
+        ordering = "AFTER"
+        side = "BOTH"
